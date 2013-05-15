@@ -9,6 +9,11 @@
 
 # finish with https://kaggle2.blob.core.windows.net/prospector-files/1091/815dad0d-88d9-4b70-9117-fe7cee94879b/scikitlearn.pdf
 
+
+# Non-binary classification problem with few parameters, one-vs-all logistic regression
+# Non-binary classification problem with many parameters, one-vs-all neural network
+
+
 def main():
 	print '''
 By @dpmehta02

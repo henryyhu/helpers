@@ -46,3 +46,18 @@ Let's get started.
 
 if __name__ == '__main__':
 	main()
+
+
+
+
+'''
+1. Run simple Regression
+2. plot learning curves (error against training set size) using 10-fold cross validation
+	if high bias, add features, make polynomial, decrease ridge lambda
+	if high variance, opposite, get more training examples, increase ridge lambda
+3. Error analysis:  Manually examine the examples (in cross validation set) 
+		that your algorithm made errors on. See if you spot any systematic trend 
+		in what type of examples it is making errors on.
+
+scale features if order of magnitude higher
+'''

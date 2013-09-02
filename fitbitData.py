@@ -39,6 +39,7 @@ def main():
 
     auth = OAuth1(CONSUMER_KEY, CONSUMER_SECRET, access_token['oauth_token'], access_token['oauth_token_secret'])
 
+    # UPDATE YOUR USER ID in each of the following three lines
     caloriesIn_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/foods/log/caloriesIn/date/2013-08-31/max.json", auth=auth)
     sleep_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/sleep/minutesAsleep/date/2013-08-31/max.json", auth=auth)
     caloriesOut_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/activities/calories/date/2013-08-31/max.json", auth=auth)

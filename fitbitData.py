@@ -10,8 +10,8 @@ import urlparse
 def main():
 
     # your app + API constants
-    CONSUMER_KEY = '0e176924cc524fdea5cfe2a20d913a8d'
-    CONSUMER_SECRET = '6b06f581ed1c4affa7b12ef9360c7f9b'
+    CONSUMER_KEY = '' # REGISTER AN APP WITH FITBIT AND UPDATE THIS
+    CONSUMER_SECRET = '' # UPDATE THIS
     consumer = oauth.Consumer(CONSUMER_KEY, CONSUMER_SECRET)
     client = oauth.Client(consumer)
     REQUEST_TOKEN_URL = 'http://api.fitbit.com/oauth/request_token'
@@ -39,9 +39,9 @@ def main():
 
     auth = OAuth1(CONSUMER_KEY, CONSUMER_SECRET, access_token['oauth_token'], access_token['oauth_token_secret'])
 
-    caloriesIn_json = requests.get("http://api.fitbit.com/1/user/22KMKN/foods/log/caloriesIn/date/2013-08-31/max.json", auth=auth)
-    sleep_json = requests.get("http://api.fitbit.com/1/user/22KMKN/sleep/minutesAsleep/date/2013-08-31/max.json", auth=auth)
-    caloriesOut_json = requests.get("http://api.fitbit.com/1/user/22KMKN/activities/calories/date/2013-08-31/max.json", auth=auth)
+    caloriesIn_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/foods/log/caloriesIn/date/2013-08-31/max.json", auth=auth)
+    sleep_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/sleep/minutesAsleep/date/2013-08-31/max.json", auth=auth)
+    caloriesOut_json = requests.get("http://api.fitbit.com/1/user/<yourUserID>/activities/calories/date/2013-08-31/max.json", auth=auth)
 
     caloriesIn = json.loads(caloriesIn_json.text)
     caloriesIn_list = [int(item['value'].encode('utf-8')) for item in caloriesIn['foods-log-caloriesIn'] if int(item['value'].encode('utf-8')) > 0]
